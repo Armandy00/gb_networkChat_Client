@@ -14,7 +14,11 @@
    <center>
       <SplitPane dividerPositions="0.1705685618729097" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ListView fx:id="userList" layoutX="-86.0" layoutY="24.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <SplitPane dividerPositions="0.8207070707070707" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -46,7 +50,7 @@
                                     </AnchorPane>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="66.0" prefWidth="124.0">
                                        <children>
-                                          <Button defaultButton="true" layoutX="123.0" layoutY="21.0" mnemonicParsing="false" onAction="#sendMessageInChat" prefHeight="66.0" prefWidth="67.0" text="Send" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="sendButton" defaultButton="true" layoutX="123.0" layoutY="21.0" mnemonicParsing="false" onAction="#sendMessageInChat" prefHeight="66.0" prefWidth="67.0" text="Send" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <font>
                                                 <Font name="System Bold" size="29.0" />
                                              </font>
