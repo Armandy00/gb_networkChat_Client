@@ -1,19 +1,19 @@
-package com.example.gb_networkchat_client;
+package com.example.gb_networkchat_client.controllers;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
+import com.example.gb_networkchat_client.models.Network;
 import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-public class HelloController {
+public class ChatController {
 
     private SimpleDateFormat simpleDateFormat;
 
@@ -37,24 +37,23 @@ public class HelloController {
 
     @FXML
     private Button sendButton;
+    private Network network;
 
     @FXML
     void sendMessageInChat() {
         String message = messageText.getText().trim();
-
+        messageText.clear();
         if (message.isEmpty()) {
             return;
         }
 
-        appendMessage(message);
-
-
+        //appendMessage(message);
+        network.sendMessage(message);
     }
 
-    private void appendMessage(String message) {
-        message = "Я:  " + message + "  " + simpleDateFormat.format(new Date());
+    public void appendMessage(String message) {
+        message = message + "  " + simpleDateFormat.format(new Date());
         messagesArea.getItems().add(message);
-        messageText.clear();
     }
 
     @FXML
@@ -63,7 +62,9 @@ public class HelloController {
         userList.setItems(FXCollections.observableArrayList("Екатерина", "Александр", "Юлия", "Дария"));
         sendButton.setOnAction(event -> sendMessageInChat());
         messageText.setOnAction(event -> sendMessageInChat());
-
     }
 
+    public void setNetwork(Network network) {
+        this.network = network;
+    }
 }
